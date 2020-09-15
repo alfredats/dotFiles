@@ -1,0 +1,23 @@
+#!/bin/zsh
+
+PLUGIN_DIR="$(pwd)/../plugged/"
+
+
+# vim-gf edited syntax file
+if [[ -d "$PLUGIN_DIR/vim-gf/" ]]
+then 
+  echo "Replacing edited vim-gf syntax file..."
+  cp -f "$(pwd)/vim-gf_editedSyntax.vim" "$PLUGIN_DIR/vim-gf/syntax/gf.vim"
+else 
+  echo "nup"
+fi
+
+
+# haskell-vim edited syntax file
+if [[ -d "$PLUGIN_DIR/haskell-vim/" ]]
+then 
+  echo "Replacing edited haskell-vim syntax file..."
+  cp -f "$(pwd)/haskell-vim_editedSyntax.vim" "$PLUGIN_DIR/haskell-vim/syntax/haskell.vim"
+else 
+  echo "nup"
+fi
