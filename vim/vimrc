@@ -196,7 +196,8 @@ let g:livepreview_previewer = 'open -a Preview'
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
-
+" Personal mapping
+nnoremap <leader>w <Esc>:w<cr>
 
 " Formatting
 set nu
