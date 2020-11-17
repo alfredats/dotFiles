@@ -21,8 +21,10 @@ Plug 'https://github.com/altercation/vim-colors-solarized.git'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'https://github.com/neovimhaskell/haskell-vim.git'
 Plug 'https://github.com/gdetrez/vim-gf.git'
-Plug 'xuhdev/vim-latex-live-preview', { 'for': 'tex' }
+Plug 'preservim/nerdcommenter'
+Plug 'dhruvasagar/vim-table-mode'
 call plug#end()
+
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Plugin options

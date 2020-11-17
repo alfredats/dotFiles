@@ -80,6 +80,9 @@ source $ZSH/oh-my-zsh.sh
 
 # User configuration
 
+# Set vi-mode
+set -o vi
+
 # export MANPATH="/usr/local/man:$MANPATH"
 
 # You may need to manually set your language environment
@@ -106,6 +109,11 @@ source $ZSH/oh-my-zsh.sh
 alias typora="open -a typora"
 alias mv="mv -i"
 alias cp="cp -i"
+alias python='python3'
+alias pip='pip3'
+
+
+
 
 ## Remove username from terminal prompt
 prompt_context() {
@@ -128,3 +136,6 @@ alias ni="nix-env -f '<nixpkgs>' -iA"
 function ghciWith { nix-shell -p "haskellPackages.ghcWithPackages (pkg: with pkg;[$argv])" --run ghci; }
 eval "$(direnv hook zsh)"
 eval $(thefuck --alias)
+if command -v pyenv 1>/dev/null 2>&1; then
+  eval "$(pyenv init -)"
+fi
