@@ -17,13 +17,19 @@ endif
 " plugins
 call plug#begin('~/.vim/plugged')
 Plug 'itchyny/lightline.vim'
-Plug 'https://github.com/altercation/vim-colors-solarized.git'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'https://github.com/neovimhaskell/haskell-vim.git'
 Plug 'https://github.com/gdetrez/vim-gf.git'
 Plug 'preservim/nerdcommenter'
 Plug 'dhruvasagar/vim-table-mode'
+" themes
+Plug 'sjl/badwolf'
+Plug 'https://github.com/altercation/vim-colors-solarized.git'
+Plug 'tomasr/molokai'
+Plug 'nanotech/jellybeans.vim'
+
 call plug#end()
+
 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -190,7 +196,9 @@ let g:lightline = {'colorscheme': 'solarized',}
 
 "   Solarized
 set background=dark
-colorscheme solarized
+colorscheme jellybeans
+set termguicolors 
+hi CocErrorFloat ctermfg=LightBlue
 
 "   vim-latex-live-preview
 autocmd Filetype tex setl updatetime=1
@@ -226,4 +234,6 @@ set splitright
 set nobackup
 set undodir=~/.vim/undodir
 set undofile
+
+
 
