@@ -3,9 +3,15 @@ set nocompatible
 let mapleader = "\\"
 syntax enable
 
-if !has('gui_running')
-      set t_Co=256
-  endif
+"   terminal colorscheme compatibilities 
+if exists('$TMUX') " Use this if using tmux
+  set t_Co=256
+else " else use this
+  set termguicolors
+endif
+
+
+
 
 " Installs vim-plug plugin manager if not already installed
 if empty(glob('~/.vim/autoload/plug.vim'))
@@ -27,7 +33,6 @@ Plug 'sjl/badwolf'
 Plug 'https://github.com/altercation/vim-colors-solarized.git'
 Plug 'tomasr/molokai'
 Plug 'nanotech/jellybeans.vim'
-
 call plug#end()
 
 
@@ -192,9 +197,9 @@ nnoremap <silent><nowait> <space>p  :<C-u>CocListResume<CR>
 "   vim-airline
 set laststatus=2
 set noshowmode
-let g:lightline = {'colorscheme': 'solarized',}
+let g:lightline = {'colorscheme': 'molokai',}
 
-"   Solarized
+"  colorscheme 
 set background=dark
 colorscheme jellybeans
 set termguicolors 
