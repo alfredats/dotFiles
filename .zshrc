@@ -33,11 +33,30 @@ zstyle ':vcs_info:git*+set-message:*' hooks git-untracked
 PROMPT='%F{240}${(r:$COLUMNS::-:)}%f %2~ ${vcs_info_msg_0_} %# '
 RPROMPT='%F{240}%m%f'
 
-
+# case insensitive matching
+zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Za-z}'
+setopt nocaseglob
+# enable history logging
+HISTSIZE=10000
+SAVEHIST=10000
+HISTFILE=~/.zsh_history
+# don't put duplicate lines or lines starting with space in the history.
+HISTCONTROL=ignoreboth
 # share history between zsh sessions
 setopt sharehistory
+setopt appendhistory
+# expire duplicates first
+setopt HIST_EXPIRE_DUPS_FIRST 
+# do not store duplications
+setopt HIST_IGNORE_DUPS
+#ignore duplicates when searching
+setopt HIST_FIND_NO_DUPS
+# removes blank lines from history
+setopt HIST_REDUCE_BLANKS
 # <C-r> searches zsh command history
 bindkey '^R' history-incremental-search-backward
+
+
 
 # Example aliases
 alias typora="open -a typora"
@@ -62,7 +81,7 @@ export NVM_DIR="$HOME/.nvm"
 
 
 # NIX settings
-if [ -e /Users/alfredang/.nix-profile/etc/profile.d/nix.sh ]; then . /Users/alfredang/.nix-profile/etc/profile.d/nix.sh; fi # added by Nix installer
+if [ -e /home/alfredang/.nix-profile/etc/profile.d/nix.sh ]; then . /home/alfredang/.nix-profile/etc/profile.d/nix.sh; fi # added by Nix installer
 alias ni="nix-env -f '<nixpkgs>' -iA"
 function ghciWith { nix-shell -p "haskellPackages.ghcWithPackages (pkg: with pkg;[$argv])" --run ghci; }
 eval "$(direnv hook zsh)"
@@ -71,19 +90,5 @@ if command -v pyenv 1>/dev/null 2>&1; then
   eval "$(pyenv init -)"
 fi
 
-# @begin(96550156)@ - Do not edit these lines - added automatically!
-# You should customize CIAOPATH before this chunk if you place bundles in
-# places other than ~/.ciao
-if [ -x /Users/alfredang/temp/ciao/build/bin/ciao-env ] ; then
-  eval "$(/Users/alfredang/temp/ciao/build/bin/ciao-env --sh)"
-fi
-# @end(96550156)@ - End of automatically added lines.
-
-PATH="/Users/alfredang/perl5/bin${PATH:+:${PATH}}"; export PATH;
-PERL5LIB="/Users/alfredang/perl5/lib/perl5${PERL5LIB:+:${PERL5LIB}}"; export PERL5LIB;
-PERL_LOCAL_LIB_ROOT="/Users/alfredang/perl5${PERL_LOCAL_LIB_ROOT:+:${PERL_LOCAL_LIB_ROOT}}"; export PERL_LOCAL_LIB_ROOT;
-PERL_MB_OPT="--install_base \"/Users/alfredang/perl5\""; export PERL_MB_OPT;
-PERL_MM_OPT="INSTALL_BASE=/Users/alfredang/perl5"; export PERL_MM_OPT;
-
 # opam configuration
-test -r /Users/alfredang/.opam/opam-init/init.zsh && . /Users/alfredang/.opam/opam-init/init.zsh > /dev/null 2> /dev/null || true
+test -r /home/alfredang/.opam/opam-init/init.zsh && . /home/alfredang/.opam/opam-init/init.zsh > /dev/null 2> /dev/null || true
