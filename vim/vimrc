@@ -29,6 +29,7 @@ Plug 'https://github.com/gdetrez/vim-gf.git'
 Plug 'preservim/nerdcommenter'
 Plug 'dhruvasagar/vim-table-mode'
 " themes
+Plug 'arcticicestudio/nord-vim'
 Plug 'sjl/badwolf'
 Plug 'https://github.com/altercation/vim-colors-solarized.git'
 Plug 'tomasr/molokai'
@@ -197,17 +198,12 @@ nnoremap <silent><nowait> <space>p  :<C-u>CocListResume<CR>
 "   vim-airline
 set laststatus=2
 set noshowmode
-let g:lightline = {'colorscheme': 'molokai',}
+let g:lightline = {'colorscheme': 'nord',}
 
 "  colorscheme 
 set background=dark
-colorscheme jellybeans
-set termguicolors 
+colorscheme nord
 hi CocErrorFloat ctermfg=LightBlue
-
-"   vim-latex-live-preview
-autocmd Filetype tex setl updatetime=1
-let g:livepreview_previewer = 'open -a Preview'
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 

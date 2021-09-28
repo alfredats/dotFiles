@@ -1,5 +1,7 @@
+export LANG=C.UTF-8
+
 # utilize gnu utils installed with brew instead of mac utils
-export PATH=/usr/local/opt/coreutils/libexec/gnubin:$PATH
+export PATH=$HOME/.local/bin:$HOME/bin:/usr/share/code/bin:$PATH
 # have gnu versions of man pages
 export MANPATH=/usr/local/opt/coreutils/libexec/gnuman:$MANPATH
 
@@ -24,11 +26,11 @@ autoload -Uz vcs_info
 precmd_vcs_info() { vcs_info }
 precmd_functions+=( precmd_vcs_info )
 setopt prompt_subst
-zstyle ':vcs_info:git:*' formats '%F{214}(%b%m%u%c) %f'
+zstyle ':vcs_info:git:*' formats '%F{214}<%b|%u%c%m> %f'
 zstyle ':vcs_info:*' enable git
 zstyle ':vcs_info:*' check-for-changes true
-zstyle ':vcs_info:*' unstagedstr "*"
-zstyle ':vcs_info:*' stagedstr "+"
+zstyle ':vcs_info:*' unstagedstr "U"
+zstyle ':vcs_info:*' stagedstr "S"
 zstyle ':vcs_info:git*+set-message:*' hooks git-untracked
 PROMPT='%F{240}${(r:$COLUMNS::-:)}%f %2~ ${vcs_info_msg_0_} %# '
 RPROMPT='%F{240}%m%f'
@@ -68,8 +70,6 @@ alias lsa='ls -lah'
 alias md='mkdir -p'
 alias mv="mv -i"
 alias cp="cp -i"
-alias python='python3'
-alias pip='pip3'
 alias nlghci='stack ghci --no-load'
 #alias emacs='emacs -nw'
 
@@ -86,9 +86,11 @@ alias ni="nix-env -f '<nixpkgs>' -iA"
 function ghciWith { nix-shell -p "haskellPackages.ghcWithPackages (pkg: with pkg;[$argv])" --run ghci; }
 eval "$(direnv hook zsh)"
 eval $(thefuck --alias)
-if command -v pyenv 1>/dev/null 2>&1; then
-  eval "$(pyenv init -)"
-fi
+
+# pyenv configuration (unix systems)
+export PYENV_ROOT="$HOME/.pyenv"
+export PATH="$PYENV_ROOT/bin:$PATH"
+eval "$(pyenv init --path)"
 
 # opam configuration
 test -r /home/alfredang/.opam/opam-init/init.zsh && . /home/alfredang/.opam/opam-init/init.zsh > /dev/null 2> /dev/null || true
