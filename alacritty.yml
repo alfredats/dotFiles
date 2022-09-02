@@ -1,0 +1,113 @@
+font:
+  normal:
+    family: FiraMono Nerd Font
+    style: Regular
+
+  bold:
+    family: FiraMono Nerd Font 
+    style: Bold
+
+  italic:
+    family: FiraMono Nerd Font
+    style: Italic
+
+  bold_italic:
+    family: FiraMono Nerd Font
+    style: Bold Italic
+
+
+schemes:
+  # Colors (Ubuntu)
+  ubuntu: &ubuntu
+    primary:
+      background: '#300a24'
+      foreground: '#eeeeec'
+    normal:
+      black:   '#2e3436'
+      red:     '#cc0000'
+      green:   '#4e9a06'
+      yellow:  '#c4a000'
+      blue:    '#3465a4'
+      magenta: '#75507b'
+      cyan:    '#06989a'
+      white:   '#d3d7cf'
+    bright:
+      black:   '#555753'
+      red:     '#ef2929'
+      green:   '#8ae234'
+      yellow:  '#fce94f'
+      blue:    '#729fcf'
+      magenta: '#ad7fa8'
+      cyan:    '#34e2e2'
+      white:   '#eeeeec'
+  pop_os: &pop_os
+    primary:
+      background: '#333333'
+      foreground: '#F2F2F2'
+    normal:
+      black:   '#333333'
+      red:     '#CC0000'
+      green:   '#4E9A06'
+      yellow:  '#C4A000'
+      blue:    '#3465A4'
+      magenta: '#75507B'
+      cyan:    '#06989A'
+      white:   '#D3D7CF'
+    bright:
+      black:   '#88807C'
+      red:     '#F15D22'
+      green:   '#73C48F'
+      yellow:  '#FFCE51'
+      blue:    '#48B9C7'
+      magenta: '#AD7FA8'
+      cyan:    '#34E2E2'
+      white:   '#EEEEEC'
+  seoul256: &seoul256
+    primary:
+      background: '#3a3a3a'
+      foreground: '#d0d0d0'
+    normal:
+      black:   '#4e4e4e'
+      red:     '#d68787'
+      green:   '#5f865f'
+      yellow:  '#d8af5f'
+      blue:    '#85add4'
+      magenta: '#d7afaf'
+      cyan:    '#87afaf'
+      white:   '#d0d0d0'
+    bright:
+      black:   '#626262'
+      red:     '#d75f87'
+      green:   '#87af87'
+      yellow:  '#ffd787'
+      blue:    '#add4fb'
+      magenta: '#ffafaf'
+      cyan:    '#87d7d7'
+      white:   '#e4e4e4'
+  sourcerer: &sourcerer
+    primary:
+      background: '#222222'
+      foreground: '#c2c2b0'
+    cursor:
+      text:   '#c2c2b0'
+      cursor: '#c2c2b0'
+    normal:
+      black:   '#111111'
+      red:     '#aa4450'
+      green:   '#719611'
+      yellow:  '#cc8800'
+      blue:    '#6688aa'
+      magenta: '#8f6f8f'
+      cyan:    '#528b8b'
+      white:   '#d3d3d3'
+    bright:
+      black:   '#181818'
+      red:     '#ff6a6a'
+      green:   '#b1d631'
+      yellow:  '#ff9800'
+      blue:    '#90b0d1'
+      magenta: '#8181a6'
+      cyan:    '#87ceeb'
+      white:   '#c1cdc1'
+
+colors: *sourcerer
