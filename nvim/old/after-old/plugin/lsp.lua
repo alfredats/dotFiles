@@ -2,11 +2,20 @@ local lsp = require('lsp-zero').preset({})
 
 lsp.on_attach(function(client, bufnr)
   lsp.default_keymaps({buffer = bufnr})
-
-  vim.keymap.set({'n', 'x'}, 'gq', function()
-    vim.lsp.buf.format({async = false, timeout_ms = 10000})
-  end)
 end)
+
+lsp.format_mapping('gq', {
+  format_opts = {
+    async = false,
+    timeout_ms = 10000,
+  },
+  servers = {
+    ['pyright'] = {'python'},
+  }
+})
+
+
+
 
 lsp.set_sign_icons({
   error = '✘',

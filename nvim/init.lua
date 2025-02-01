@@ -1,3 +1,2 @@
-require("alfredats.packer")
-require("alfredats.set")
-require("alfredats.remap")
+require("config.lazy")
+require("alfredats.init")

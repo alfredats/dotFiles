@@ -10,6 +10,12 @@ return require('packer').startup(function(use)
   -- Gotta have cool colors
   use { "catppuccin/nvim", as = "catppuccin" }
 
+  -- Aesthetic status bar
+  use {
+    'nvim-lualine/lualine.nvim',
+    requires = { 'nvim-tree/nvim-web-devicons', opt = true }
+  }
+
   use {
     'nvim-telescope/telescope.nvim', tag = '0.1.1',
   -- or                            , branch = '0.1.x',
@@ -22,10 +28,11 @@ return require('packer').startup(function(use)
 
   use 'numToStr/Comment.nvim'
 
+  use { 'dhruvasagar/vim-table-mode' }
 
   use {
     'VonHeikemen/lsp-zero.nvim',
-    branch = 'v2.x',
+    branch = 'v4.x',
     requires = {
       -- LSP Support
       {'neovim/nvim-lspconfig'},             -- Required
@@ -43,6 +50,8 @@ return require('packer').startup(function(use)
       {'L3MON4D3/LuaSnip'},     -- Required
     }
   }
+
+  use {'mfussenegger/nvim-jdtls'}
 
   use {
     "folke/which-key.nvim",

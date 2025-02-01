@@ -10,9 +10,11 @@ vim.opt.expandtab = true
 
 vim.opt.smartindent = true
 
-vim.opt.wrap = false 
-vim.opt.colorcolumn = "80"
-vim.opt.scrolloff = 8
+--vim.opt.wrap = true 
+--vim.opt.textwidth = 80
+--vim.opt.linebreak = true
+--vim.opt.colorcolumn = "80"
+--vim.opt.scrolloff = 8
 
 vim.opt.swapfile = false
 vim.opt.backup = false
@@ -22,6 +24,8 @@ vim.opt.updatetime = 50
 
 vim.opt.hlsearch = false
 vim.opt.incsearch = true
+vim.opt.splitbelow = true
+vim.opt.splitright = true
 
 vim.opt.termguicolors = true
 
